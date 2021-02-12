@@ -23,4 +23,14 @@ public class YelpConsumerResponse {
     @Getter
     @Setter
     private String review;
+
+    @Override
+    public String toString() {
+        return "YelpConsumerResponse{" +
+                "name='" + name + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", rating=" + rating +
+                ", review='" + review + '\'' +
+                '}';
+    }
 }
