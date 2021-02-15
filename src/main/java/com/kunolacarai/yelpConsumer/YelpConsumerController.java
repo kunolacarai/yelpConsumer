@@ -19,7 +19,7 @@ public class YelpConsumerController {
     }
 
     @GetMapping("/yelpReview")
-    public List<YelpConsumerResponse> yelpResponse(@RequestParam(value = "id") String id) {
+    public List<YelpConsumerResponse> yelpResponse(@RequestParam(value = "id", defaultValue = "16pyiWyaQXDXFXqqanAB6g") String id) {
         YelpReviewResponse yelpReviewResponse = yelpReviewService.getReview(id);
         List<YelpConsumerResponse> returnValue = new ArrayList<>();
         for (YelpReview review : yelpReviewResponse.getReviews()) {

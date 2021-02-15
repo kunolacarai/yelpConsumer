@@ -23,7 +23,7 @@ public class YelpReviewService {
         HttpEntity<YelpReviewResponse> request = new HttpEntity<>(headers);
 
         ResponseEntity<YelpReviewResponse> response = restTemplate.exchange(
-                "https://api.yelp.com/v3/businesses/16pyiWyaQXDXFXqqanAB6g/reviews",
+                "https://api.yelp.com/v3/businesses/"+id+"/reviews",
                 HttpMethod.GET,
                 request,
                 YelpReviewResponse.class
