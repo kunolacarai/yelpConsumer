@@ -13,6 +13,4 @@ public class YelpConsumerConfiguration {
         return builder.build();
     }
 
-    @Bean
-    public YelpReviewService yelpReviewService() {return new YelpReviewService(); }
 }
