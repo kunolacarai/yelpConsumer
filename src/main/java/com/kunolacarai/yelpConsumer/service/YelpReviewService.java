@@ -1,5 +1,6 @@
-package com.kunolacarai.yelpConsumer;
+package com.kunolacarai.yelpConsumer.service;
 
+import com.kunolacarai.yelpConsumer.model.YelpReviewResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -11,8 +12,12 @@ import java.util.Collections;
 public class YelpReviewService {
     public static final String YELP_API_KEY = System.getenv("YELP_API_KEY");
 
+    private final RestTemplate restTemplate;
+
     @Autowired
-    private RestTemplate restTemplate;
+    public YelpReviewService(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
     public YelpReviewResponse getReview(String id) {
         HttpHeaders headers = new HttpHeaders();

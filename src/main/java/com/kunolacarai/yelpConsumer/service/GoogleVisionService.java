@@ -1,4 +1,4 @@
-package com.kunolacarai.yelpConsumer;
+package com.kunolacarai.yelpConsumer.service;
 
 import com.google.cloud.vision.v1.AnnotateImageRequest;
 import com.google.cloud.vision.v1.AnnotateImageResponse;
@@ -8,6 +8,7 @@ import com.google.cloud.vision.v1.Feature;
 import com.google.cloud.vision.v1.Image;
 import com.google.cloud.vision.v1.ImageAnnotatorClient;
 import com.google.cloud.vision.v1.ImageSource;
+import com.kunolacarai.yelpConsumer.model.GoogleVisionEmotion;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -23,6 +24,11 @@ public class GoogleVisionService {
     public List<GoogleVisionEmotion> detectFacesGcs(String uri) throws IOException {
         List<AnnotateImageRequest> requests = new ArrayList<>();
 
+        /*
+        TODO: Replace the newBuilder() parts with dependency injected singletons.
+        On the other hand, the Builder may be a oneshot class, similar to streams.
+        This is the danger of relying on outside code.
+        */
         ImageSource imgSource = ImageSource.newBuilder().setImageUri(uri).build();
         Image img = Image.newBuilder().setSource(imgSource).build();
         Feature feat = Feature.newBuilder().setType(Feature.Type.FACE_DETECTION).build();

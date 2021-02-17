@@ -1,4 +1,4 @@
-package com.kunolacarai.yelpConsumer;
+package com.kunolacarai.yelpConsumer.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -27,4 +27,13 @@ public class GoogleVisionEmotion {
     @JsonProperty("surprise_likelihood")
     private String surpriseLikelihood;
 
+    @Override
+    public String toString() {
+        return "GoogleVisionEmotion{" +
+                "joyLikelihood='" + joyLikelihood + '\'' +
+                ", sorrowLikelihood='" + sorrowLikelihood + '\'' +
+                ", angerLikelihood='" + angerLikelihood + '\'' +
+                ", surpriseLikelihood='" + surpriseLikelihood + '\'' +
+                '}';
+    }
 }

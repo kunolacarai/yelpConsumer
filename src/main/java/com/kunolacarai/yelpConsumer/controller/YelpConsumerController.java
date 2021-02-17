@@ -1,5 +1,10 @@
-package com.kunolacarai.yelpConsumer;
+package com.kunolacarai.yelpConsumer.controller;
 
+import com.kunolacarai.yelpConsumer.model.YelpConsumerResponse;
+import com.kunolacarai.yelpConsumer.model.YelpReview;
+import com.kunolacarai.yelpConsumer.model.YelpReviewResponse;
+import com.kunolacarai.yelpConsumer.service.GoogleVisionService;
+import com.kunolacarai.yelpConsumer.service.YelpReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
